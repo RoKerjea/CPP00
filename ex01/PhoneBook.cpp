@@ -64,7 +64,8 @@ void PhoneBook::searchContact() const {
         if (i > 0 && i <= _contactCount) {
         	break ;
         }
-		std::cout << input << std::endl;
+		std::cin.clear();
+		std::cin.ignore(10000, '\n');
 		std::cout << "Invalid index. Please try again." << std::endl;
     }
     std::cout << "First name    : " << _contact[i - 1].getFirstName() << std::endl;
