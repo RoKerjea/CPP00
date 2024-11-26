@@ -56,15 +56,15 @@ void PhoneBook::searchContact() const {
     std::string input;
 	PhoneBook::afficheContacts();
     while (true) {
-        std::cout << "Enter the index of a contact: ";
-        std::getline(std::cin, input);
+        std::cout << "Enter the index of a contact: "<< std::endl;
+        std::cin >> i;
         if (std::cin.eof()) {
             return;
         }
-        std::stringstream ss(input);
-        if (ss >> i && ss.eof() && i > 0 && i <= _contactCount) {
+        if (i > 0 && i <= _contactCount) {
         	break ;
         }
+		std::cout << input << std::endl;
 		std::cout << "Invalid index. Please try again." << std::endl;
     }
     std::cout << "First name    : " << _contact[i - 1].getFirstName() << std::endl;
